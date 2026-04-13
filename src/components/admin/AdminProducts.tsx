@@ -218,11 +218,13 @@ export default function AdminProducts() {
           <tbody
             className={`divide-y ${darkMode ? 'divide-gray-700' : 'divide-gray-200'} transition-colors duration-300`}
           >
-            {sortedProducts.map((product) => (
-              <tr
+            {sortedProducts.map((product) => {
+              const supplierLastUpdated = product.supplier?.lastUpdated ?? product.supplier?.last_updated;
+              return (
+                <tr
                 key={product.productId}
                 className={`hover:${darkMode ? 'bg-gray-800' : 'bg-gray-100'} transition-colors duration-300`}
-              >
+                >
                 <td
                   className={`px-6 py-4 whitespace-nowrap ${darkMode ? 'text-light' : 'text-gray-800'} transition-colors duration-300`}
                 >
@@ -233,8 +235,13 @@ export default function AdminProducts() {
                 >
                   <div>{product.supplier?.name || 'Unknown'}</div>
                   <div className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    <span className="sr-only">Supplier </span>
                     Last updated:{' '}
-                    {formatLastUpdated(product.supplier?.lastUpdated ?? product.supplier?.last_updated)}
+                    {supplierLastUpdated ? (
+                      <time dateTime={supplierLastUpdated}>{formatLastUpdated(supplierLastUpdated)}</time>
+                    ) : (
+                      'Not available'
+                    )}
                   </div>
                 </td>
                 <td
@@ -291,7 +298,8 @@ export default function AdminProducts() {
                   </button>
                 </td>
               </tr>
-            ))}
+              );
+            })}
           </tbody>
         </table>
       </div>
