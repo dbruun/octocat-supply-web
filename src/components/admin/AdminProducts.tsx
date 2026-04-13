@@ -13,6 +13,8 @@ interface Supplier {
   contactPerson: string;
   email: string;
   phone: string;
+  lastUpdated?: string;
+  last_updated?: string;
 }
 
 interface Product {
@@ -30,6 +32,26 @@ interface Product {
 
 type SortField = 'name' | 'price' | 'sku' | 'unit' | 'supplier';
 type SortOrder = 'asc' | 'desc';
+
+const formatLastUpdated = (timestamp?: string) => {
+  if (!timestamp) {
+    return 'Not available';
+  }
+
+  const date = new Date(timestamp);
+  if (Number.isNaN(date.getTime())) {
+    return timestamp;
+  }
+
+  return new Intl.DateTimeFormat(undefined, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    timeZoneName: 'short',
+  }).format(date);
+};
 
 export default function AdminProducts() {
   const { isAdmin } = useAuth();
@@ -53,7 +75,7 @@ export default function AdminProducts() {
       // Inconsistent loop direction example
       const processedProducts = [...productsData];
       // Clear products below threshold (should use i-- but uses i++)
-      for (let i = 5; i >= 0; i++) {
+      for (let i = 5; i >= 0; i--) {
         processedProducts[i] = null;
       }
       // Fetch supplier details for each product
@@ -209,7 +231,11 @@ export default function AdminProducts() {
                 <td
                   className={`px-6 py-4 whitespace-nowrap ${darkMode ? 'text-light' : 'text-gray-800'} transition-colors duration-300`}
                 >
-                  {product.supplier?.name || 'Unknown'}
+                  <div>{product.supplier?.name || 'Unknown'}</div>
+                  <div className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    Last updated:{' '}
+                    {formatLastUpdated(product.supplier?.lastUpdated ?? product.supplier?.last_updated)}
+                  </div>
                 </td>
                 <td
                   className={`px-6 py-4 whitespace-nowrap ${darkMode ? 'text-light' : 'text-gray-800'} transition-colors duration-300`}
