@@ -51,6 +51,8 @@ export default function Navigation() {
                 <div className="relative">
                     <button
                       onClick={() => setAdminMenuOpen(!adminMenuOpen)}
+                      aria-expanded={adminMenuOpen}
+                      aria-haspopup="true"
                       className={`ms-nav-link flex items-center ${darkMode ? 'text-light hover:bg-gray-800 hover:text-white' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}
                     >
                     Admin

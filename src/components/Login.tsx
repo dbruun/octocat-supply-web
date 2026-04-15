@@ -43,7 +43,7 @@ export default function Login() {
         </h2>
 
         {error && (
-          <div className="bg-red-500/10 border border-red-500 text-red-600 rounded-md p-3 mb-4">
+          <div role="alert" className="bg-red-500/10 border border-red-500 text-red-600 rounded-md p-3 mb-4">
             {error}
           </div>
         )}
@@ -61,7 +61,7 @@ export default function Login() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className={`${darkMode ? 'w-full bg-gray-700 text-light border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/30' : 'ms-input'} transition-colors duration-300`}
+              className={`${darkMode ? 'ms-input-dark' : 'ms-input'}`}
               required
               autoFocus
             />
@@ -79,14 +79,14 @@ export default function Login() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className={`${darkMode ? 'w-full bg-gray-700 text-light border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/30' : 'ms-input'} transition-colors duration-300`}
+              className={`${darkMode ? 'ms-input-dark' : 'ms-input'}`}
               required
             />
           </div>
 
           <button
             type="submit"
-            className={`w-full ${darkMode ? 'bg-primary hover:bg-accent rounded-lg text-white py-2 px-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30' : 'ms-button-primary'}`}
+            className={`w-full ${darkMode ? 'ms-button-primary-dark' : 'ms-button-primary'}`}
           >
             Login
           </button>
