@@ -57,7 +57,7 @@ export default function Welcome() {
           {/* Text Content */}
           <div className="absolute inset-0 flex items-start pt-16 justify-end max-w-7xl mx-auto px-10 sm:px-12 lg:px-14 mr-[-1rem]">
             <div
-              className={`max-w-2xl ${darkMode ? 'bg-dark/60' : 'bg-white/60'} backdrop-blur-sm p-8 rounded-xl shadow-[0_0_25px_rgba(118,184,82,0.5)] transition-colors duration-300`}
+              className={`max-w-2xl ${darkMode ? 'bg-dark/60' : 'bg-white/60'} backdrop-blur-sm p-8 rounded-xl shadow-[0_0_25px_rgba(15,108,189,0.5)] transition-colors duration-300`}
             >
               <div
                 className={`${darkMode ? 'bg-primary/20' : 'bg-primary/30'} inline-block px-4 py-2 rounded-full mb-4 border border-primary/40`}
@@ -108,7 +108,7 @@ export default function Welcome() {
                   <filter id="green-glow">
                     <feFlood
                       result="flood"
-                      floodColor="rgb(118,184,82)"
+                      floodColor="rgb(15,108,189)"
                       floodOpacity=".3"
                     ></feFlood>
                     <feComposite in="flood" operator="in" in2="SourceGraphic"></feComposite>
@@ -123,7 +123,7 @@ export default function Welcome() {
               <Slider {...sliderSettings} ref={sliderRef} className="opacity-50">
                 {/* Logo 1 - Cat Cafe */}
                 <div className="flex flex-col items-center justify-center text-center px-4">
-                  <div className="flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(118,184,82,0.4)] group-hover:scale-110 mb-2">
+                  <div className="flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(15,108,189,0.4)] group-hover:scale-110 mb-2">
                     <svg
                       viewBox="0 0 100 100"
                       className="w-24 h-24 text-gray-500 group-hover:text-primary transition-colors duration-300"
@@ -153,7 +153,7 @@ export default function Welcome() {
 
                 {/* Logo 2 - Paw Tech */}
                 <div className="flex flex-col items-center justify-center text-center px-4">
-                  <div className="flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(118,184,82,0.4)] group-hover:scale-110 mb-2">
+                  <div className="flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(15,108,189,0.4)] group-hover:scale-110 mb-2">
                     <svg
                       viewBox="0 0 100 100"
                       className="w-24 h-24 text-gray-500 group-hover:text-primary transition-colors duration-300"
@@ -196,7 +196,7 @@ export default function Welcome() {
 
                 {/* Logo 3 - Feline Innovations */}
                 <div className="flex flex-col items-center justify-center text-center px-4">
-                  <div className="flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(118,184,82,0.4)] group-hover:scale-110 mb-2">
+                  <div className="flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(15,108,189,0.4)] group-hover:scale-110 mb-2">
                     <svg
                       viewBox="0 0 100 100"
                       className="w-24 h-24 text-gray-500 group-hover:text-primary transition-colors duration-300"
@@ -225,7 +225,7 @@ export default function Welcome() {
 
                 {/* Logo 4 - Cat Health AI */}
                 <div className="flex flex-col items-center justify-center text-center px-4">
-                  <div className="flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(118,184,82,0.4)] group-hover:scale-110 mb-2">
+                  <div className="flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(15,108,189,0.4)] group-hover:scale-110 mb-2">
                     <svg
                       viewBox="0 0 100 100"
                       className="w-24 h-24 text-gray-500 group-hover:text-primary transition-colors duration-300"
@@ -257,7 +257,7 @@ export default function Welcome() {
 
                 {/* Logo 5 - Purr Tech */}
                 <div className="flex flex-col items-center justify-center text-center px-4">
-                  <div className="flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(118,184,82,0.4)] group-hover:scale-110 mb-2">
+                  <div className="flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(15,108,189,0.4)] group-hover:scale-110 mb-2">
                     <svg
                       viewBox="0 0 100 100"
                       className="w-24 h-24 text-gray-500 group-hover:text-primary transition-colors duration-300"
@@ -291,7 +291,7 @@ export default function Welcome() {
 
                 {/* Logo 6 - Whisker Data */}
                 <div className="flex flex-col items-center justify-center text-center px-4">
-                  <div className="flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(118,184,82,0.4)] group-hover:scale-110 mb-2">
+                  <div className="flex items-center justify-center transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(15,108,189,0.4)] group-hover:scale-110 mb-2">
                     <svg
                       viewBox="0 0 100 100"
                       className="w-24 h-24 text-gray-500 group-hover:text-primary transition-colors duration-300"
@@ -328,7 +328,7 @@ export default function Welcome() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <div
-              className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 shadow-lg hover:shadow-[0_0_15px_rgba(118,184,82,0.3)] transition-all duration-300`}
+              className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 shadow-lg hover:shadow-[0_0_15px_rgba(15,108,189,0.3)] transition-all duration-300`}
             >
               <div className="text-primary text-4xl mb-4">
                 <svg
@@ -359,7 +359,7 @@ export default function Welcome() {
               </p>
             </div>
             <div
-              className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 shadow-lg hover:shadow-[0_0_15px_rgba(118,184,82,0.3)] transition-all duration-300`}
+              className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 shadow-lg hover:shadow-[0_0_15px_rgba(15,108,189,0.3)] transition-all duration-300`}
             >
               <div className="text-primary text-4xl mb-4">
                 <svg
@@ -396,7 +396,7 @@ export default function Welcome() {
               </p>
             </div>
             <div
-              className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 shadow-lg hover:shadow-[0_0_15px_rgba(118,184,82,0.3)] transition-all duration-300`}
+              className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 shadow-lg hover:shadow-[0_0_15px_rgba(15,108,189,0.3)] transition-all duration-300`}
             >
               <div className="text-primary text-4xl mb-4">
                 <svg

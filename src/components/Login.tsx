@@ -31,22 +31,21 @@ export default function Login() {
 
   return (
     <div
-      className={`min-h-screen pt-20 ${darkMode ? 'bg-dark' : 'bg-gray-100'} flex items-center justify-center px-4 transition-colors duration-300`}
+      className={`min-h-screen pt-20 ${darkMode ? 'bg-dark' : 'bg-gray-50'} flex items-center justify-center px-4 transition-colors duration-300`}
     >
       <div
-        className={`max-w-md w-full ${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg shadow-lg p-8 transition-colors duration-300`}
+        className={`max-w-md w-full ${darkMode ? 'bg-gray-800 border-gray-700' : 'ms-card'} rounded-xl p-8 border transition-colors duration-300`}
       >
         <h2
-          className={`text-3xl font-bold ${darkMode ? 'text-light' : 'text-gray-800'} mb-6 transition-colors duration-300`}
+          className={`text-3xl font-semibold ${darkMode ? 'text-light' : 'text-gray-900'} mb-6 transition-colors duration-300`}
         >
           Login
         </h2>
 
         {error && (
-          <div
-            className="bg-red-500/10 border border-red-500 text-red-500 rounded-md p-3 mb-4"
-            dangerouslySetInnerHTML={{ __html: error }}
-          />
+          <div role="alert" className="bg-red-500/10 border border-red-500 text-red-600 rounded-md p-3 mb-4">
+            {error}
+          </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -62,7 +61,7 @@ export default function Login() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className={`w-full ${darkMode ? 'bg-gray-700 text-light' : 'bg-gray-100 text-gray-800'} rounded px-3 py-2 transition-colors duration-300`}
+              className={`${darkMode ? 'ms-input-dark' : 'ms-input'}`}
               required
               autoFocus
             />
@@ -80,14 +79,14 @@ export default function Login() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className={`w-full ${darkMode ? 'bg-gray-700 text-light' : 'bg-gray-100 text-gray-800'} rounded px-3 py-2 transition-colors duration-300`}
+              className={`${darkMode ? 'ms-input-dark' : 'ms-input'}`}
               required
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-primary hover:bg-accent text-white py-2 px-4 rounded transition-colors"
+            className={`w-full ${darkMode ? 'ms-button-primary-dark' : 'ms-button-primary'}`}
           >
             Login
           </button>

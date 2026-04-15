@@ -20,7 +20,7 @@ function ThemedApp() {
   return (
     <Router>
       <div
-        className={`flex flex-col min-h-screen ${darkMode ? 'bg-dark' : 'bg-gray-100'} transition-colors duration-300`}
+        className={`flex flex-col min-h-screen ${darkMode ? 'bg-dark' : 'bg-gray-50'} transition-colors duration-300`}
       >
         <Navigation />
         <main className="flex-grow">

@@ -16,6 +16,40 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #f9fafb;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@layer components {
+  .ms-card {
+    @apply rounded-xl border border-gray-200 bg-white shadow-sm;
+  }
+
+  .ms-button-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 font-medium text-white transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2;
+  }
+
+  .ms-button-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-4 py-2 font-medium text-gray-700 transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2;
+  }
+
+  .ms-input {
+    @apply w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-800 placeholder:text-gray-500 transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20;
+  }
+
+  .ms-input-dark {
+    @apply w-full rounded-lg border border-gray-600 bg-gray-700 px-3 py-2 text-light transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30;
+  }
+
+  .ms-button-primary-dark {
+    @apply inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 font-medium text-white transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30;
+  }
+
+  .ms-nav-link {
+    @apply rounded-md px-3 py-2 text-sm font-medium transition-colors;
+  }
 }
 
 /* Custom Scrollbar - Dark Mode */
@@ -24,16 +58,16 @@ body {
 }
 
 .dark ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: #111827;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #76B852;
+  background: #0F6CBD;
   border-radius: 4px;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #8BC34A;
+  background: #115EA3;
 }
 
 /* Custom Scrollbar - Light Mode */
@@ -46,12 +80,12 @@ body {
 }
 
 .light ::-webkit-scrollbar-thumb {
-  background: #76B852;
+  background: #0F6CBD;
   border-radius: 4px;
 }
 
 .light ::-webkit-scrollbar-thumb:hover {
-  background: #8BC34A;
+  background: #115EA3;
 }
 
 /* Fallback for non-class-based scrollbars */
@@ -60,30 +94,30 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: #111827;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #76B852;
+  background: #0F6CBD;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8BC34A;
+  background: #115EA3;
 }
 
 /* Custom Carousel Styles */
 .slick-dots li button:before {
-  color: #76B852 !important;
+  color: #0F6CBD !important;
 }
 
 .slick-dots li.slick-active button:before {
-  color: #8BC34A !important;
+  color: #115EA3 !important;
 }
 
 .slick-prev:before,
 .slick-next:before {
-  color: #76B852 !important;
+  color: #0F6CBD !important;
 }
 
 .slick-track {

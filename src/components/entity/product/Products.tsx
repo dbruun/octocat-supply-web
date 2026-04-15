@@ -82,7 +82,7 @@ export default function Products() {
   if (isLoading) {
     return (
       <div
-        className={`min-h-screen ${darkMode ? 'bg-dark' : 'bg-gray-100'} pt-20 px-4 transition-colors duration-300`}
+        className={`min-h-screen ${darkMode ? 'bg-dark' : 'bg-gray-50'} pt-20 px-4 transition-colors duration-300`}
       >
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-center items-center h-64">
@@ -96,7 +96,7 @@ export default function Products() {
   if (error) {
     return (
       <div
-        className={`min-h-screen ${darkMode ? 'bg-dark' : 'bg-gray-100'} pt-20 px-4 transition-colors duration-300`}
+        className={`min-h-screen ${darkMode ? 'bg-dark' : 'bg-gray-50'} pt-20 px-4 transition-colors duration-300`}
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-red-500 text-center">Failed to fetch products</div>
@@ -107,12 +107,12 @@ export default function Products() {
 
   return (
     <div
-      className={`min-h-screen ${darkMode ? 'bg-dark' : 'bg-gray-100'} pt-20 pb-16 px-4 transition-colors duration-300`}
+      className={`min-h-screen ${darkMode ? 'bg-dark' : 'bg-gray-50'} pt-20 pb-16 px-4 transition-colors duration-300`}
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col space-y-6">
           <h1
-            className={`text-3xl font-bold ${darkMode ? 'text-light' : 'text-gray-800'} transition-colors duration-300`}
+            className={`text-3xl font-semibold ${darkMode ? 'text-light' : 'text-gray-900'} transition-colors duration-300`}
           >
             Products
           </h1>
@@ -123,9 +123,9 @@ export default function Products() {
               placeholder="Search products..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className={`w-full px-4 py-2 ${darkMode ? 'bg-gray-800 text-light border-gray-700' : 'bg-white text-gray-800 border-gray-300'} rounded-lg border focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-colors duration-300`}
-              aria-label="Search products"
-            />
+                className={`${darkMode ? 'ms-input-dark bg-gray-800 border-gray-700' : 'ms-input'}`}
+                aria-label="Search products"
+              />
             <svg
               className={`absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 ${darkMode ? 'text-gray-400' : 'text-gray-500'} transition-colors duration-300`}
               fill="none"
@@ -142,8 +142,7 @@ export default function Products() {
           {/* Empty state when no products match */}
           {(!filteredProducts || filteredProducts.length === 0) && (
             <div
-              className={`flex flex-col items-center justify-center text-center py-20 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-white'
-                } shadow-sm border ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}
+                className={`flex flex-col items-center justify-center text-center py-20 rounded-xl ${darkMode ? 'bg-gray-800 border-gray-700' : 'ms-card'} shadow-sm border`}
               role="status"
               aria-live="polite"
             >
@@ -175,10 +174,10 @@ export default function Products() {
               return (
                 <div
                   key={product.productId}
-                  className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(118,184,82,0.3)] flex flex-col`}
-                >
+                    className={`${darkMode ? 'bg-gray-800 border-gray-700 hover:border-gray-600 hover:shadow-lg' : 'ms-card hover:border-primary/30 hover:shadow-md'} rounded-xl overflow-hidden border transform transition-all duration-300 flex flex-col`}
+                  >
                   <div
-                    className={`relative h-56 ${darkMode ? 'bg-gradient-to-t from-gray-700 to-gray-800' : 'bg-gradient-to-t from-gray-100 to-white'} transition-colors duration-300 cursor-pointer`}
+                      className={`relative h-56 ${darkMode ? 'bg-gradient-to-t from-gray-700 to-gray-800' : 'bg-gradient-to-t from-gray-100 to-gray-50'} transition-colors duration-300 cursor-pointer`}
                     onClick={() => handleProductClick(product)}
                   >
                     <img
@@ -240,11 +239,11 @@ export default function Products() {
 
                     <div className="flex items-center justify-between">
                       <div
-                        className={`flex items-center space-x-3 ${darkMode ? 'bg-gray-700' : 'bg-gray-200'} rounded-lg p-1 transition-colors duration-300`}
+                        className={`flex items-center space-x-3 ${darkMode ? 'bg-gray-700' : 'bg-gray-100 border border-gray-200'} rounded-lg p-1 transition-colors duration-300`}
                       >
                         <button
                           onClick={() => handleQuantityChange(product.productId, -1)}
-                          className={`w-8 h-8 flex items-center justify-center ${darkMode ? 'text-light' : 'text-gray-700'} hover:text-primary transition-colors duration-300`}
+                          className={`w-8 h-8 flex items-center justify-center ${darkMode ? 'text-light' : 'text-gray-700'} hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 rounded transition-colors duration-300`}
                           aria-label={`Decrease quantity of ${product.name}`}
                           id={`decrease-qty-${product.productId}`}
                         >
@@ -259,7 +258,7 @@ export default function Products() {
                         </span>
                         <button
                           onClick={() => handleQuantityChange(product.productId, 1)}
-                          className={`w-8 h-8 flex items-center justify-center ${darkMode ? 'text-light' : 'text-gray-700'} hover:text-primary transition-colors duration-300`}
+                          className={`w-8 h-8 flex items-center justify-center ${darkMode ? 'text-light' : 'text-gray-700'} hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 rounded transition-colors duration-300`}
                           aria-label={`Increase quantity of ${product.name}`}
                           id={`increase-qty-${product.productId}`}
                         >
@@ -268,7 +267,7 @@ export default function Products() {
                       </div>
                       <button
                         onClick={() => handleAddToCart(product.productId)}
-                        className={`px-4 py-2 rounded-lg transition-colors ${quantities[product.productId]
+                        className={`px-4 py-2 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 ${quantities[product.productId]
                           ? 'bg-primary hover:bg-accent text-white'
                           : `${darkMode ? 'bg-gray-700 text-gray-400' : 'bg-gray-200 text-gray-500'} cursor-not-allowed`
                           }`}
