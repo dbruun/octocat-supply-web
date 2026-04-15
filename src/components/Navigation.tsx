@@ -12,7 +12,7 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`${darkMode ? 'bg-dark/95' : 'bg-white/95'} backdrop-blur-sm fixed w-full z-50 shadow-md transition-colors duration-300`}
+      className={`${darkMode ? 'bg-dark/95 border-gray-800' : 'bg-white/95 border-gray-200'} backdrop-blur-sm fixed w-full z-50 border-b shadow-sm transition-colors duration-300`}
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
@@ -31,28 +31,28 @@ export default function Navigation() {
             <div className="ml-10 flex items-baseline space-x-4">
               <Link
                 to="/"
-                className={`${darkMode ? 'text-light hover:text-primary' : 'text-gray-700 hover:text-primary'} px-3 py-2 rounded-md text-sm font-medium transition-colors`}
+                className={`ms-nav-link ${darkMode ? 'text-light hover:bg-gray-800 hover:text-white' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}
               >
                 Home
               </Link>
               <Link
                 to="/products"
-                className={`${darkMode ? 'text-light hover:text-primary' : 'text-gray-700 hover:text-primary'} px-3 py-2 rounded-md text-sm font-medium transition-colors`}
+                className={`ms-nav-link ${darkMode ? 'text-light hover:bg-gray-800 hover:text-white' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}
               >
                 Products
               </Link>
               <Link
                 to="/about"
-                className={`${darkMode ? 'text-light hover:text-primary' : 'text-gray-700 hover:text-primary'} px-3 py-2 rounded-md text-sm font-medium transition-colors`}
+                className={`ms-nav-link ${darkMode ? 'text-light hover:bg-gray-800 hover:text-white' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}
               >
                 About us
               </Link>
               {isAdmin && (
                 <div className="relative">
-                  <button
-                    onClick={() => setAdminMenuOpen(!adminMenuOpen)}
-                    className={`${darkMode ? 'text-light hover:text-primary' : 'text-gray-700 hover:text-primary'} px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors`}
-                  >
+                    <button
+                      onClick={() => setAdminMenuOpen(!adminMenuOpen)}
+                      className={`ms-nav-link flex items-center ${darkMode ? 'text-light hover:bg-gray-800 hover:text-white' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}
+                    >
                     Admin
                     <svg
                       className={`ml-1 h-4 w-4 transform ${adminMenuOpen ? 'rotate-180' : ''} transition-transform`}
@@ -90,7 +90,7 @@ export default function Navigation() {
             {/* Cart Icon with Badge */}
             <Link
               to="/cart"
-              className="relative p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className={`relative p-2 rounded-full transition-colors ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}
               aria-label="Shopping cart"
             >
               <svg
@@ -113,7 +113,7 @@ export default function Navigation() {
 
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full focus:outline-none transition-colors"
+              className={`p-2 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}
               aria-label="Toggle dark/light mode"
             >
               {darkMode ? (
@@ -150,7 +150,7 @@ export default function Navigation() {
                 </span>
                 <button
                   onClick={logout}
-                  className={`${darkMode ? 'text-light hover:text-primary' : 'text-gray-700 hover:text-primary'} px-3 py-2 rounded-md text-sm font-medium transition-colors`}
+                  className={`ms-nav-link ${darkMode ? 'text-light hover:bg-gray-800 hover:text-white' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}
                 >
                   Logout
                 </button>
@@ -158,7 +158,7 @@ export default function Navigation() {
             ) : (
               <Link
                 to="/login"
-                className="bg-primary hover:bg-accent text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
+                className="ms-button-primary text-sm"
               >
                 Login
               </Link>
